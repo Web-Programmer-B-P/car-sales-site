@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Размещение объявления</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/create_advertisement.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+<body class="body advertisement-body">
+<div class="container advertisement-container">
+    <h3 class="advertisement-container-title">Заполните данные об автомобиле</h3>
+    <form id="advertisement-form">
+        <div class="dropdown-container">
+            <div class='dropdown'>
+                <select id='transmission'>
+                    <option hidden value='xxxxx'>КПП</option>
+                    <option value='Автомат'>Автомат</option>
+                    <option value='Механика'>Механика</option>
+                    <option value='Робот'>Робот</option>
+                </select>
+            </div>
+            <div class='dropdown'>
+                <select id='wheel-drive'>
+                    <option hidden value='xxxxx'>Привод</option>
+                    <option value='Полный'>Полный</option>
+                    <option value='Передний'>Передний</option>
+                    <option value='Задний'>Задний</option>
+                </select>
+            </div>
+            <div class='dropdown'>
+                <select id='handlebar'>
+                    <option hidden value='xxxxx'>Руль</option>
+                    <option value='Правый'>Правый</option>
+                    <option value='Левый'>Левый</option>
+                </select>
+            </div>
+            <div class='dropdown'>
+                <select id='car-body'>
+                    <option hidden value='xxxxx'>Тип кузова</option>
+                    <option value='Хэтчбек'>Хэтчбек</option>
+                    <option value='Универсал'>Универсал</option>
+                    <option value='Лифтбэк'>Лифтбэк</option>
+                    <option value='Купе'>Купе</option>
+                    <option value='Кабриолет'>Кабриолет</option>
+                    <option value='Родстер'>Родстер</option>
+                    <option value='Стретч'>Стретч</option>
+                    <option value='Внедорожник'>Внедорожник</option>
+                    <option value='Кроссовер'>Кроссовер</option>
+                    <option value='Фургон'>Фургон</option>
+                </select>
+            </div>
+            <div class='dropdown fuel'>
+                <select id='fuel-type'>
+                    <option hidden value='xxxxx'>Тип двигателя</option>
+                    <option value='Безин'>Безин</option>
+                    <option value='Дизель'>Дизель</option>
+                    <option value='Гибрид'>Гибрид</option>
+                    <option value='Электро'>Электро</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group has-feedback year-of-issue">
+            <label for="year">Год выпуска: </label>
+            <input type="date" name="year" id="year">
+        </div>
+        <div class="form-group has-feedback image">
+            <form id='image-form'>
+                <label for='image'>Загрузите фото вашего авто:</label>
+                <input type='file' id='image' name='image'><br>
+            </form>
+        </div>
+        <div class="form-group has-feedback name">
+            <label for="name">Название автомобиля:</label>
+            <input type="text" name="name" class="form-control" id="name">
+        </div>
+        <div class="form-group has-feedback color">
+            <label for="color">Цвет:</label>
+            <input type="text" name="color" class="form-control" id="color">
+        </div>
+        <div class="form-group has-feedback km-age">
+            <label for="km-age">Укажите пробег или оставте поле пустым если авто новый:</label>
+            <input type="text" name="km-age" class="form-control" id="km-age">
+        </div>
+        <div class="form-group has-feedback price">
+            <label for="price">Цена:</label>
+            <input type="text" name="price" class="form-control" id="price">
+        </div>
+        <div class="form-group has-feedback horse-power">
+            <label for="horse-power">Л.с:</label>
+            <input type="text" name="horse-power" class="form-control" id="horse-power">
+        </div>
+        <div class="form-group has-feedback description">
+            <label for="description">Описание:</label>
+            <textarea rows="5" name="description" class="form-control" id="description"></textarea>
+        </div>
+        <button type="button" id="save-advert" class="btn btn-success btn-block">Сохранить</button>
+    </form>
+</div>
+</body>
+</body>
+</html>

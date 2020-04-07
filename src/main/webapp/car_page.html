@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница авто</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/car_page.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+</head>
+<body>
+<div class="wrap_block">
+    <div class="box_title">
+        <h1 class="name_car"></h1>
+        <span class="car-price"></span>
+    </div>
+    <div class="box_content">
+        <div class="box_info">
+            <div class="container_content_and-button">
+                <div class="car_info">
+                    <div class="row_info">
+                        <label class="cell_label">Год выпуска</label>
+                        <p class="cell_content year"></p>
+                    </div>
+                    <div class="row_info">
+                        <label class="cell_label">Пробег</label>
+                        <p class="cell_content km-age"></p>
+                    </div>
+                    <div class="row_info">
+                        <label class="cell_label">Кузов</label>
+                        <p class="cell_content car-body"></p>
+                    </div>
+                    <div class="row_info">
+                        <label class="cell_label">Цвет</label>
+                        <p class="cell_content car-color"></p>
+                    </div>
+                    <div class="row_info">
+                        <label class="cell_label">Двигатель</label>
+                        <p class="cell_content fuel-type-horse-power"></p>
+                    </div>
+                    <div class="row_info">
+                        <label class="cell_label">Коробка</label>
+                        <p class="cell_content transmiss"></p>
+                    </div>
+                    <div class="row_info">
+                        <label class="cell_label">Привод</label>
+                        <p class="cell_content wheel-drive"></p>
+                    </div>
+                    <div class="row_info">
+                        <label class="cell_label">Руль</label>
+                        <p class="cell_content handlebar"></p>
+                    </div>
+                    <div class="row_info">
+                        <label class="cell_label">Статус</label>
+                        <p class="cell_content sale-status"></p>
+                    </div>
+                </div>
+                <div class="box_phone_btn">
+                    <input type="button" id="label-ph" value="Показать номер телефона" class="show_phone"/>
+                </div>
+            </div>
+        </div>
+        <div class="car_description">
+            <h3 class="title_description">Описание автомобиля</h3>
+            <p class="text_description car-description"></p>
+        </div>
+
+        <div class="box_buttons_footer">
+            <div class="buttons_footer" id="back-home">
+                <input type="button" value="Вернутся на главную" class="button_back-home"/>
+            </div>
+            <div class="box_checkbox">
+                <input type="checkbox" id="flag-sale"/>
+                <label for="flag-sale" class="label_sale">Отметить как продан</label>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
