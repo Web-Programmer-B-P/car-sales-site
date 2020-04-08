@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @WebServlet("/create-advertisement")
 public class CreateAdvertisementController extends HttpServlet {
-    private static final String CREATE_ADVERTISEMENT_VIEW = "create_advertisement.html";
+    private static final String CREATE_ADVERTISEMENT_VIEW = "create.html";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

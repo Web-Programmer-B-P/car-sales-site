@@ -40,7 +40,7 @@ function addressValidate(address) {
             return false;
         }
     } else {
-        addErrorSpan('.address-up', 'Поле обязательное!');
+        addErrorSpan('.address-up', 'Адрес: обязательное поле!');
         return false;
     }
 }
@@ -55,17 +55,17 @@ function passwordValidate(password) {
             return false;
         }
     } else {
-        addErrorSpan('.pass-up', 'Поле обязательное!');
+        addErrorSpan('.pass-up', 'Пароль: обязательное поле!');
         return false;
     }
 }
 
 function nameValidate(name) {
     if (name !== '' && name.length >= 5) {
-        addSuccessSpan('.name-up', 'Имя:')
+        addSuccessSpan('.name-up', 'Имя:');
         return true;
     } else {
-        addErrorSpan('.name-up', 'Поле обязательное!')
+        addErrorSpan('.name-up', 'Имя: обязательное поле!');
         return false;
     }
 }
@@ -80,7 +80,7 @@ function phoneValidate(phone) {
             return false;
         }
     } else {
-        addErrorSpan('.phone-up', 'Поле обязательное!');
+        addErrorSpan('.phone-up', 'Телефон: обязательное поле!');
         return false;
     }
 }
@@ -95,7 +95,7 @@ function emailValidate(email) {
             return false;
         }
     } else {
-        addErrorSpan('.email-up', 'Поле обязательное!');
+        addErrorSpan('.email-up', 'Почта: обязательное поле!');
         return false;
     }
 
@@ -106,19 +106,19 @@ function emailValidate(email) {
 }
 
 function addSuccessSpan(nameClass, nameLabel) {
-    $('' + nameClass + ' label:first').remove();
-    $('' + nameClass + ' input:first').before("<label>" + nameLabel + "</label>");
+    $('' + nameClass + ' p:first').remove();
+    $('' + nameClass + ' input:first').before("<p class='p-label'>" + nameLabel + "</p>");
     $('' + nameClass + ' span').remove();
     $('' + nameClass + '').removeClass('has-error').addClass('has-success');
-    $('' + nameClass + ' input').after("<span class='glyphicon glyphicon-ok form-control-feedback'></span>");
+    $('' + nameClass + ' input').after("<span class='form-control-feedback'></span>");
 }
 
 function addErrorSpan(nameClass, nameMessage) {
-    $('' + nameClass + ' label:first').remove();
-    $('' + nameClass + ' input:first').before("<label style='color: #ff4500'>" + nameMessage + "</label>");
+    $('' + nameClass + ' p:first').remove();
+    $('' + nameClass + ' input:first').before("<p class='p-label' style='color: #ff4500'>" + nameMessage + "</p>");
     $('' + nameClass + ' span').remove();
     $('' + nameClass + '').removeClass('has-success').addClass('has-error')
-        .append("<span class='glyphicon glyphicon-remove form-control-feedback'></span>");
+        .append("<span class='form-control-feedback'></span>");
 }
 
 
