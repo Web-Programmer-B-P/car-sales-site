@@ -9,7 +9,7 @@ $(document).ready(function () {
         drawAdvertisements(data)
     }).fail(function (error) {
         console.log(error)
-    })
+    });
 });
 
 $('.all-items .block-auto').remove();

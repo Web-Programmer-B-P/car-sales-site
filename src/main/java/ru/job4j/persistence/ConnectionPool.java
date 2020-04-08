@@ -16,9 +16,9 @@ public class ConnectionPool {
     private static final Logger LOG = LogManager.getLogger(ConnectionPool.class.getName());
     private static final ConnectionPool INSTANCE = new ConnectionPool();
     private static final String POSTGRES_SQL_DRIVER = "org.postgresql.Driver";
-    private static final String URL_WITH_HOST_AND_DB_NAME = "jdbc:postgresql://localhost:5432/car?useSSL=false";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "password";
+    private static final String URL_WITH_HOST_AND_DB_NAME = "jdbc:postgresql://ec2-79-125-125-97.eu-west-1.compute.amazonaws.com:5432/d1i8kmtdggs0v6?ssl=true&sslmode=require";
+    private static final String USER = "knwcymrknzmiai";
+    private static final String PASSWORD = "382e016965d1acdd0e9bac86b37dba1e1b70c0515f8272462e09d820ac0dc685";
     private static final String DIALECT = "org.hibernate.dialect.PostgreSQL94Dialect";
     private static final String THREAD = "thread";
     private static final String ERROR_MESSAGE = "Смотри в конфигурацию hibernate и hikary";
@@ -30,7 +30,7 @@ public class ConnectionPool {
     private static final String VALUE_SIZE_POOL = "20";
     private static final String HIKARI_IDLE_TIMEOUT = "hibernate.hikari.idleTimeout";
     private static final String VALUE_IDLE_TIMEOUT = "300000";
-    private static final boolean FLAG_SHOW_SQL = true;
+    private static final boolean FLAG_SHOW_SQL = false;
     private StandardServiceRegistry registry;
     private SessionFactory sessionFactory;
 
