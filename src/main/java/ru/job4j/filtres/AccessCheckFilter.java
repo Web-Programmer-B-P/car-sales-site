@@ -20,7 +20,7 @@ public class AccessCheckFilter implements Filter {
         resp.setCharacterEncoding(ENCODING);
         String currentRequestUri = req.getRequestURI();
         User sessionUser = (User) req.getSession().getAttribute("user");
-        if ((currentRequestUri.contains("/create-advertisement") || currentRequestUri.contains("/js/create_advertisement.js")
+        if ((currentRequestUri.contains("/create-advertisement") || currentRequestUri.contains("/js/create.js")
                 || currentRequestUri.contains("/save-advertisement")) && Objects.isNull(sessionUser)) {
             resp.sendRedirect("/sing-in");
             return;
