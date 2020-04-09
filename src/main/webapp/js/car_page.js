@@ -29,7 +29,7 @@ $(document).ready(function () {
     $('.wheel-drive').text(advert.car.wheelDrive);
     $('.handlebar').text(advert.car.handlebar);
     $('.car-description').text(advert.description);
-    $('.box_info').append("<img src='/download?id=" + advert.id + "' onerror=\"this.src='css/avto.jpg'\" class='car_image'>");
+    $('.box_info').append("<img src='/download?id=" + advert.id + "' onerror=\"this.src='css/empty.jpg'\" class='car_image'>");
 
     if (statusId === advert.userId) {
         $('.box_checkbox').show();

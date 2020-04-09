@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    loadAllItems();
+    setInterval(loadAllItems, 180000);
+});
+
+function loadAllItems() {
     $.ajax({
         url: '/all-advertisements',
         type: 'POST',
@@ -10,11 +15,11 @@ $(document).ready(function () {
     }).fail(function (error) {
         console.log(error)
     });
-});
+}
 
-$('.all-items .block-auto').remove();
 function drawAdvertisements(listItems) {
-    let items =  listItems.advertisements;
+    $('.all-items .block-auto').remove();
+    let items = listItems.advertisements;
     $(items).each(function (index, item) {
         let state = item.car.kmAge;
         let status = item.saleStatus;
@@ -30,7 +35,7 @@ function drawAdvertisements(listItems) {
         }
         $('.all-items').append("<div class='block-auto'>"
             + "<div class='containers'>"
-            + "<img src='/download?id=" + item.id + "' onerror=\"this.src='css/avto.jpg'\" class='block-img'>"
+            + "<img src='/download?id=" + item.id + "' onerror=\"this.src='css/empty.jpg'\" class='block-img'>"
             + "<input hidden id='car-index' value='" + index + "'>"
             + "<div class='block-description'>"
             + "<h1 class='section-title'>" + item.car.name + "</h1>"
