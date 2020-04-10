@@ -10,10 +10,31 @@
     <script src="js/index.js"></script>
 </head>
 <body>
-<div style="width: 500px; margin: auto">
-    <h3 class="title-body-sing-up">Список всех объявлений машин</h3>
-    <div id="but" style="width: 150px; margin: auto">
+<h3 class="title-body-sing-up">Список всех объявлений машин</h3>
+<div style="display: flex; justify-content: center">
+    <div id="last">
+        <a class="btn btn-primary" role="button">Показать все объявления за последий день</a>
+    </div>
+    <div id="but" style="margin: 0 10px">
         <a href="/create-advertisement" class="btn btn-primary" role="button">Разместить объявление</a>
+    </div>
+    <div id="all" style="margin-right: 10px">
+        <a class="btn btn-primary" role="button">Все</a>
+    </div>
+    <div class='dropdown'>
+        <select class="criterion">
+            <option hidden value='xxxxx'>Поиск по типу кузова</option>
+            <option value='Хэтчбек'>Хэтчбек</option>
+            <option value='Универсал'>Универсал</option>
+            <option value='Лифтбэк'>Лифтбэк</option>
+            <option value='Купе'>Купе</option>
+            <option value='Кабриолет'>Кабриолет</option>
+            <option value='Родстер'>Родстер</option>
+            <option value='Стретч'>Стретч</option>
+            <option value='Внедорожник'>Внедорожник</option>
+            <option value='Кроссовер'>Кроссовер</option>
+            <option value='Фургон'>Фургон</option>
+        </select>
     </div>
 </div>
 <div class="all-items">

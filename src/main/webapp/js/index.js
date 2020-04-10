@@ -1,7 +1,33 @@
 $(document).ready(function () {
     loadAllItems();
     setInterval(loadAllItems, 180000);
+    $('#last').on('click', function () {
+        loadAllForLastDate();
+    })
+
+    $('.criterion').change(function () {
+        loadByCriterion($('.criterion :selected').val());
+    })
+
+    $('#all').on('click', function () {
+        loadAllItems();
+    })
 });
+
+function loadByCriterion(criteria) {
+    $.ajax({
+        url: '/get-criterion',
+        type: 'POST',
+        data: 'criterion=' + criteria,
+        dataType: "text",
+    }).done(function (data) {
+        data = JSON.parse(data);
+        console.log(data)
+        drawAdvertisements(data)
+    }).fail(function (error) {
+        console.log(error)
+    });
+}
 
 function loadAllItems() {
     $.ajax({
@@ -11,6 +37,21 @@ function loadAllItems() {
         dataType: "text",
     }).done(function (data) {
         data = JSON.parse(data);
+        drawAdvertisements(data)
+    }).fail(function (error) {
+        console.log(error)
+    });
+}
+
+function loadAllForLastDate() {
+    $.ajax({
+        url: '/get-last',
+        type: 'POST',
+        data: false,
+        dataType: "text",
+    }).done(function (data) {
+        data = JSON.parse(data);
+        console.log(data)
         drawAdvertisements(data)
     }).fail(function (error) {
         console.log(error)
@@ -71,15 +112,13 @@ function drawAdvertisements(listItems) {
             + "</div>"
             + "</div>"
             + " </div>"
-            + "</div>")
-            .on('click', '.block-auto', function (event) {
+            + "</div>").off()
+            .on('click', '.block-auto', function () {
                 let indexCar = $(this).find('#car-index').val();
                 localStorage.clear();
                 localStorage.setItem("car", JSON.stringify(items[indexCar]));
                 localStorage.setItem("statusId", JSON.stringify(listItems.statusId));
                 window.location.href = "/single-advertisement";
-                event.stopImmediatePropagation();
-                return false;
             });
     })
 }

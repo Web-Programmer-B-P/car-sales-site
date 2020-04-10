@@ -29,4 +29,12 @@ public class AdvertisementService {
         advertisement.setSaleStatus(status);
         advertisementDao.update(advertisement);
     }
+
+    public List<Advertisement> findAllWithLastDate() {
+        return advertisementDao.findAllByLastDate();
+    }
+
+    public List<Advertisement> findAllByCriterion(String criterion) {
+        return advertisementDao.findAllByCriterion(criterion);
+    }
 }

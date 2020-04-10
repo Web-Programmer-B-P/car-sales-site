@@ -11,10 +11,6 @@ public class UserDao extends CommonDao {
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
     private static final UserDao INSTANCE = new UserDao();
     private static final String ERROR_MESSAGE_ADD = "Смотри в добавление новой задачи";
-    private static final String ERROR_MESSAGE_FIND_ALL = "Смотри в получение списка всех заданий";
-    private static final String ERROR_MESSAGE_DELETE = "Смотри в удаление записи";
-    private static final String ERROR_MESSAGE_UPDATE = "Смотри в обновление записи";
-    private static final String QUERY_ALL_ITEMS = "From User";
 
     private UserDao() {
 
@@ -42,28 +38,6 @@ public class UserDao extends CommonDao {
                 },
                 connectionPool,
                 ERROR_MESSAGE_FIND_BY_ID
-        );
-    }
-
-    public void update(User user) {
-        transactionWithOutResult(session -> session.update(user),
-                connectionPool,
-                ERROR_MESSAGE_UPDATE
-        );
-    }
-
-    public void delete(User user) {
-        transactionWithOutResult(session -> session.delete(user),
-                connectionPool,
-                ERROR_MESSAGE_DELETE
-        );
-    }
-
-    public List<User> findAll() {
-        return transactionWithResult(
-                session -> session.createQuery(QUERY_ALL_ITEMS).list(),
-                connectionPool,
-                ERROR_MESSAGE_FIND_ALL
         );
     }
 

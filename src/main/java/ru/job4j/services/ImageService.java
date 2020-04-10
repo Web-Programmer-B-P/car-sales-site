@@ -3,8 +3,6 @@ package ru.job4j.services;
 import ru.job4j.model.Image;
 import ru.job4j.persistence.ImageDao;
 
-import java.util.List;
-
 public class ImageService {
     private final ImageDao imageDao = ImageDao.getInstance();
     private static final ImageService INSTANCE = new ImageService();
